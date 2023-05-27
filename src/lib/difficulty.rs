@@ -1,6 +1,7 @@
 pub fn check_difficulty(hash: &[u8; 32], difficulty: u128) -> bool {
-    difficulty > difficulty_bytes_as_u128(&hash)
+    difficulty > difficulty_bytes_as_u128(hash)
 }
+#[allow(clippy::erasing_op, clippy::precedence, clippy::identity_op)]
 fn difficulty_bytes_as_u128(v: &[u8; 32]) -> u128 {
     ((v[31] as u128) << 0xf * 8)
         | ((v[30] as u128) << 0xe * 8)

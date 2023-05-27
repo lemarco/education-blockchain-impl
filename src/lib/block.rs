@@ -28,13 +28,19 @@ impl Debug for Block {
 }
 
 impl Block {
-    pub fn new(index: u32, prev_block_hash: BlockHash, nonce: u64, payload: String) -> Self {
+    pub fn new(
+        index: u32,
+        prev_block_hash: BlockHash,
+        nonce: u64,
+        payload: String,
+        difficulty: u128,
+    ) -> Self {
         let timestamp = now();
         let timestamp_hash = timestamp.hash_sha256();
         let index_hash = index.hash_sha256();
         let payload_hash = payload.hash_sha256();
         let nonce_hash = nonce.hash_sha256();
-        let difficulty = 0x00_00_0a_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff;
+        // let difficulty = 0x00_00_0a_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff;
         let difficulty_hash = difficulty.hash_sha256();
         let mut block_hash_vector: Vec<u8> = vec![];
         block_hash_vector.extend(index_hash);
