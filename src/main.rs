@@ -1,7 +1,9 @@
 mod lib;
-use lib::Block;
+use lib::block::Block;
 
 fn main() {
-    let block = Block::new(0, [0; 32], 0, "".to_owned());
+    let mut block = Block::new(0, [0; 32], 881670, "Genesis".to_owned());
+    println!("{:?}", &block);
+    block.mine();
     println!("{:?}", &block);
 }
