@@ -1,6 +1,6 @@
 Basic implementation of blockchain. 
 
 includes:
-    - [x] block
-    - [x] blockchain
-    - [x] transactions  
+ - [x] block
+ - [x] blockchain
+ - [x] transactions  
